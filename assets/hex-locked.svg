@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="88" height="99.3042" viewBox="0 0 88 99.3042" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="hex">
+<path id="hexagon ring" d="M43 2.3094L84 25.9808V73.3235L43 96.9948L2 73.3235V25.9808L43 2.3094Z" stroke-width="4" stroke-linejoin="round" stroke="#E3E0D5"/>
+<path id="hexagon" d="M45 12.7017L77 31.1769V68.1273L45 86.6025L13 68.1273V31.1769L45 12.7017Z" fill="#F0EEE6" stroke-width="6" stroke-linejoin="round" stroke="#F0EEE6"/>
+<g id="Icon/lock">
+<path id="Vector" d="M36.8333 48.4855H53.1667C54.4553 48.4855 55.5 49.5301 55.5 50.8188V58.9855C55.5 60.2741 54.4553 61.3188 53.1667 61.3188H36.8333C35.5447 61.3188 34.5 60.2741 34.5 58.9855V50.8188C34.5 49.5301 35.5447 48.4855 36.8333 48.4855Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#83827D"/>
+<path id="Vector_2" d="M39.1667 48.4855V43.8188C39.1667 42.2717 39.7812 40.788 40.8752 39.694C41.9692 38.6 43.4529 37.9855 45 37.9855C46.5471 37.9855 48.0308 38.6 49.1248 39.694C50.2188 40.788 50.8333 42.2717 50.8333 43.8188V48.4855" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#83827D"/>
+</g>
+</g>
+</svg>

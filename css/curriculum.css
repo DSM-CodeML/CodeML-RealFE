@@ -1,0 +1,20 @@
+.week-head, .week-main { display: grid; grid-template-columns: 72px 280px 220px 1fr 96px 20px; gap: 16px; align-items: center; padding: 0 16px; }
+.week-head { font: 400 12px/16px var(--sans); color: var(--text-tertiary); }
+.week { border-bottom: 1px solid var(--border); }
+.week.open { background: var(--bg-subtle); }
+.week-main { width: 100%; padding-top: 24px; padding-bottom: 24px; }
+.week-n { font: 500 14px/20px var(--sans); color: var(--text-tertiary); }
+.week-course { font: 500 16px/24px var(--sans); }
+.week-libs { font: 400 14px/20px var(--sans); color: var(--text-secondary); }
+.week-project { font: 400 14px/20px var(--sans); }
+.week-progress { font: 400 12px/16px var(--sans); color: var(--text-secondary); }
+.week-main img { width: 20px; height: 20px; transition: transform .15s; }
+.week.open .week-main img { transform: rotate(180deg); }
+.week-body { padding: 0 16px 16px; }
+.problem-row { display: flex; align-items: center; gap: 16px; height: 72px; border-bottom: 1px solid var(--border); }
+.problem-row:last-of-type { border-bottom: 0; }
+.row-n { width: 40px; font: 500 12px/16px var(--sans); color: var(--text-tertiary); }
+.problem-title { flex: 1; font: 700 20px/28px var(--sans); }
+.problem-row .status { width: 20px; height: 20px; }
+.open-circle { width: 20px; height: 20px; border: 1.5px solid var(--border-strong); border-radius: 999px; }
+.week-body .link-m { display: inline-block; margin-top: 12px; }

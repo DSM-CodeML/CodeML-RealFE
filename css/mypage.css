@@ -1,0 +1,63 @@
+:root { --border-strong: #cfccc0; --success: #05d23f; --error: #d12c1c; }
+.mypage-page { display: flex; min-height: 100vh; }
+.mp-body { flex: 1; min-width: 0; display: flex; align-items: flex-start; gap: 64px; padding: 40px 48px 64px; }
+
+.mp-settings { width: 240px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px; }
+.mp-settings-title { font: 700 24px/32px var(--sans); padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.mp-nav { height: 40px; padding: 10px 12px; border-radius: 8px; font: 500 14px/20px var(--sans); color: var(--text-secondary); }
+.mp-nav.active { background: var(--border); color: var(--text-primary); }
+
+.mp-main { width: 720px; max-width: 100%; display: flex; flex-direction: column; gap: 32px; }
+.mp-head { display: flex; flex-direction: column; gap: 8px; }
+.mp-form { display: flex; flex-direction: column; gap: 24px; }
+.mp-divider { border: 0; height: 1px; background: var(--border); margin: 0; }
+.mp-section { display: flex; flex-direction: column; gap: 16px; }
+.mp-h2 { font: 700 20px/28px var(--sans); }
+
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field-label { font: 500 14px/20px var(--sans); }
+.req { color: var(--error); }
+.help { font: 400 12px/16px var(--sans); color: var(--text-tertiary); }
+.label-s { font: 500 14px/20px var(--sans); }
+.input-wrap { position: relative; }
+.input-wrap img { position: absolute; right: 16px; top: 16px; width: 16px; height: 16px; }
+.input { width: 100%; height: 48px; padding: 0 16px; background: #fff; border: 1px solid var(--border); border-radius: 12px; font: 400 16px/24px var(--sans); color: var(--text-primary); }
+.input:focus { outline: 0; border: 2px solid var(--text-primary); padding: 0 15px; }
+.input[readonly] { background: var(--bg-subtle); color: var(--text-secondary); padding-right: 44px; }
+
+.card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.level-card { display: flex; flex-direction: column; gap: 16px; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.level-n { font: 700 24px/28px var(--sans); letter-spacing: -0.36px; }
+.xp-row { display: flex; align-items: center; justify-content: space-between; }
+.xp-title { font: 500 14px/20px var(--sans); }
+.xp-count { font: 400 12px/16px var(--sans); color: var(--text-secondary); }
+
+#save { align-self: flex-start; }
+#save:disabled { background: var(--bg-subtle); color: var(--border-strong); cursor: not-allowed; }
+#save.saved { background: transparent; color: var(--text-primary); border: 1px solid var(--text-primary); }
+
+/* 잔디 */
+.heat { display: flex; flex-direction: column; gap: 16px; }
+.heat-head { display: flex; justify-content: space-between; align-items: center; }
+.heat-grid { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, 14px); grid-auto-columns: 14px; gap: 4px; }
+.heat-legend { display: flex; align-items: center; justify-content: flex-end; gap: 4px; }
+.heat-legend .help { margin: 0 4px; }
+.cell { width: 14px; height: 14px; border-radius: 3px; }
+.l0 { background: #e3e0d5; } .l1 { background: #b4f2c5; } .l2 { background: #76e695; } .l3 { background: #37db65; } .l4 { background: var(--success); }
+
+/* 제출기록 */
+.sub { padding: 20px; }
+.sub-row { display: grid; grid-template-columns: 56px 1fr 140px 90px 146px; align-items: center; height: 60px; padding: 0 12px; border-bottom: 1px solid var(--border); font: 400 14px/20px var(--sans); }
+.sub-row:last-child { border-bottom: 0; }
+.sub-headrow { height: 44px; background: var(--bg-subtle); font: 400 12px/16px var(--sans); color: var(--text-secondary); border-radius: 8px; border-bottom: 0; }
+.r { text-align: right; }
+.res { display: flex; align-items: center; gap: 8px; }
+.res img { width: 8px; height: 8px; }
+
+/* Security / Danger zone */
+.action { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.action-title { font: 500 16px/24px var(--sans); }
+.action-desc { margin-top: 4px; font: 400 14px/20px var(--sans); color: var(--text-secondary); }
+.danger { border-color: var(--error); }
+.danger .action-title, .danger .btn { color: var(--error); }
+.danger .btn { border-color: var(--error); }

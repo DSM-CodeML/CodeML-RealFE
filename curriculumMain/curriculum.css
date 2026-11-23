@@ -1,0 +1,33 @@
+.tertiary { color: var(--text-tertiary); }
+
+.intro { padding: 80px 48px 48px; display: flex; flex-direction: column; gap: 32px; align-items: flex-start; }
+.intro-progress { display: flex; align-items: center; gap: 24px; }
+.intro-progress p { max-width: 640px; }
+.xp-chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px 8px 14px; background: var(--border); border-radius: 999px; font: 500 14px/20px var(--sans); white-space: nowrap; }
+.xp-chip img { width: 16px; height: 16px; }
+
+.gallery { padding: 24px 48px 64px; }
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.card { display: flex; flex-direction: column; gap: 24px; }
+.card-label { display: flex; align-items: center; gap: 32px; }
+.card-label img { width: 72px; height: 36px; }
+.card-art { width: 100%; aspect-ratio: 318 / 398; border-radius: 12px; }
+
+.chapters { padding: 0 48px 80px; }
+.chapters-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 24px; }
+
+.chapter-row, .problem-row { width: 100%; display: flex; align-items: center; gap: 24px; padding: 0 16px; border-top: 1px solid var(--border); }
+.chapter-row { height: 88px; }
+.problem-row { height: 72px; }
+.problem-row:hover { background: var(--bg-subtle); }
+.row-n { width: 40px; font: 400 14px/20px var(--sans); color: var(--text-tertiary); }
+.chapter-title { flex: 1; font: 700 24px/28px var(--sans); letter-spacing: -0.36px; }
+.problem-title { flex: 1; font: 500 16px/24px var(--sans); }
+.problem-row { padding-left: 64px; height: 60px; background: rgba(240, 238, 230, .4); }
+.problem-row .row-n { width: 32px; font-size: 13px; }
+.row-meta { font: 400 14px/20px var(--sans); color: var(--text-secondary); white-space: nowrap; }
+.chapter-row > img { width: 20px; height: 20px; }
+.badge { display: flex; align-items: center; gap: 8px; font: 500 14px/20px var(--sans); color: var(--text-secondary); white-space: nowrap; }
+.badge img { width: 8px; height: 8px; }
+.status { width: 24px; height: 24px; }
+.problems[hidden] { display: none; }

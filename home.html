@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home · CodeML</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;700&family=Source+Serif+4:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="app-page">
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-top">
+      <a class="logo logo-full" href="index.html">CodeML</a>
+      <span class="logo-mark" aria-hidden="true">CM</span>
+      <button class="sb-toggle" id="sb-toggle" aria-label="Collapse sidebar" aria-expanded="true">
+        <img class="ic-collapse" src="assets/sb-chevron-left.svg" alt="" />
+        <img class="ic-expand" src="assets/sb-chevron-right.svg" alt="" />
+      </button>
+    </div>
+    <nav class="sb-menu">
+      <a class="sb-item active" href="home.html" title="Home" aria-current="page"><img src="assets/sb-home.svg" alt="" /><span class="sb-label">Home</span></a>
+      <a class="sb-item" href="mypage.html" title="My page"><img src="assets/sb-user.svg" alt="" /><span class="sb-label">My page</span></a>
+      <a class="sb-item" href="trail.html" title="Trail"><img src="assets/sb-trail.svg" alt="" /><span class="sb-label">Trail</span></a>
+      <a class="sb-item" href="curriculum.html" title="Curriculum"><img src="assets/sb-book.svg" alt="" /><span class="sb-label">Curriculum</span></a>
+    </nav>
+    <button class="sb-account" data-not-connected>
+      <span class="avatar">A</span><span class="sb-label">Alex</span>
+    </button>
+  </aside>
+
+  <main class="app-body">
+    <header class="page-head">
+      <h1 class="title-xl" id="welcome">Welcome back</h1>
+      <p class="body-m secondary">Pick up where you left off.</p>
+    </header>
+
+    <section class="continue" aria-label="Continue">
+      <div class="continue-main">
+        <span class="caption" id="c-eyebrow"></span>
+        <h2 class="continue-title" id="c-title"></h2>
+        <div class="continue-meta" id="c-meta"></div>
+        <div class="continue-progress stack">
+          <div class="bar-row"><span class="bar-l">Week 1 progress</span><span class="bar-r" id="c-count"></span></div>
+          <div class="track"><div class="fill" id="c-fill"></div></div>
+        </div>
+      </div>
+      <div class="continue-actions">
+        <a class="btn btn-primary btn-m" id="c-resume" href="problem.html">Resume problem</a>
+        <a class="btn btn-outline btn-m" href="curriculum.html">View curriculum</a>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Stats">
+      <div class="card stat"><div class="stat-top"><img src="assets/icon-zap.svg" alt="" /><span class="stat-v" id="s-streak"></span></div><span class="stat-l">Day streak</span></div>
+      <div class="card stat"><span class="xp-title">XP goal</span><div class="bar-row"><span></span><span class="bar-l" id="s-xp"></span></div><div class="track"><div class="fill" id="s-xp-fill"></div></div></div>
+      <div class="card stat"><div class="stat-top"><img src="assets/check.svg" alt="" /><span class="stat-v" id="s-solved"></span></div><span class="stat-l">Problems solved</span></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2 class="h2">Your roadmap</h2><a class="link-m" href="curriculum.html">View curriculum</a></div>
+      <div id="roadmap"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2 class="h2">What’s new</h2></div>
+      <div class="news">
+        <span class="caption">ANNOUNCEMENT</span>
+        <h3>Introducing the AI Fundamentals track</h3>
+        <p class="body-m secondary">Twelve new problems on tensors, gradients, and model evaluation, each with step-by-step hints.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/progress-data.js"></script>
+  <script src="js/app-home.js"></script>
+</body>
+</html>

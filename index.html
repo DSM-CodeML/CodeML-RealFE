@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeML</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;700&family=Source+Serif+4:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <!-- 로그아웃 상태 헤더. 로그인 상태 헤더는 백엔드 연결 후 추가 -->
+  <header class="header">
+    <div class="header-side">
+      <a class="logo" href="index.html">CodeML</a>
+      <a class="navlink" href="curriculum.html">Curriculum</a>
+    </div>
+    <div class="header-side">
+      <a class="navlink" href="login.html">Log in</a>
+      <a class="btn btn-primary btn-m" href="login.html">Start learning</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="display-xl">Learn to code for the age of AI.</h1>
+      <p class="body-l hero-sub">CodeML is a coding-test practice site built around AI and Python. Solve real problems, read step-by-step explanations, and earn XP with every accepted solution.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-l" href="login.html">Start learning</a>
+        <a class="btn btn-outline btn-l" href="curriculum.html">Browse curriculum</a>
+      </div>
+      <img class="hero-art" src="assets/hero-art.png" alt="" />
+    </section>
+
+    <section class="section" id="carousel">
+      <div class="section-head"><h2 class="title-xl">What’s new</h2></div>
+      <div class="slide">
+        <div class="slide-text">
+          <div class="slide-top">
+            <span class="caption">ANNOUNCEMENT</span>
+            <h3 class="display-l" id="slide-title">Introducing the AI Fundamentals track</h3>
+            <p class="body-m slide-body" id="slide-body">Twelve new problems on tensors, gradients, and model evaluation, each with step-by-step hints.</p>
+          </div>
+          <button class="label-m" data-not-connected>Read announcement &nbsp;→</button>
+        </div>
+        <img class="slide-art" id="slide-art" src="assets/art-ai.svg" alt="" />
+      </div>
+      <div class="controls">
+        <div class="dots" id="dots"></div>
+        <div class="arrows">
+          <button class="page-btn" id="prev" aria-label="Previous slide"><img src="assets/chevron-left.svg" alt="" /></button>
+          <button class="page-btn" id="next" aria-label="Next slide"><img src="assets/chevron-right.svg" alt="" /></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="title-xl">Explore the curriculum</h2>
+        <a class="label-m" href="curriculum.html">View all &nbsp;→</a>
+      </div>
+      <div class="cards">
+        <a class="card" href="curriculum.html">
+          <div class="card-label"><img src="assets/dots-pill.svg" alt="" /><span class="label-m secondary">Python</span></div>
+          <img class="card-art" src="assets/art-python.svg" alt="" />
+          <h3 class="title-xl">Python Basics</h3>
+          <p class="body-l secondary">Variables, loops, functions, and the habits behind clean code.</p>
+        </a>
+        <a class="card" href="curriculum.html">
+          <div class="card-label"><img src="assets/dots-pill.svg" alt="" /><span class="label-m secondary">AI</span></div>
+          <img class="card-art" src="assets/art-ai-card.svg" alt="" />
+          <h3 class="title-xl">AI Fundamentals</h3>
+          <p class="body-l secondary">Tensors, gradients, and how to read a model’s mistakes.</p>
+        </a>
+        <a class="card" href="curriculum.html">
+          <div class="card-label"><img src="assets/dots-pill.svg" alt="" /><span class="label-m secondary">Algorithms</span></div>
+          <img class="card-art" src="assets/art-algorithms.svg" alt="" />
+          <h3 class="title-xl">Algorithms</h3>
+          <p class="body-l secondary">Sorting, searching, and the patterns coding tests love.</p>
+        </a>
+        <a class="card" href="curriculum.html">
+          <div class="card-label"><img src="assets/dots-pill.svg" alt="" /><span class="label-m secondary">Machine Learning</span></div>
+          <!-- 시안에서 도형 조합으로 그려진 아트 -->
+          <svg class="card-art" viewBox="0 0 318 398" aria-hidden="true">
+            <clipPath id="ml-clip"><rect width="318" height="398" rx="12" /></clipPath>
+            <g clip-path="url(#ml-clip)">
+              <rect x="0" y="0" width="318" height="398" fill="#7b7452" />
+              <rect x="69.96" y="143.28" width="89.04" height="214.92" fill="#4a4636" />
+              <rect x="248.04" y="179.1" width="69.96" height="159.2" fill="#a08468" />
+              <rect x="244.86" y="35.82" width="73.14" height="71.64" fill="#8c8a7a" />
+              <rect x="174.9" y="0" width="143.1" height="35.82" fill="#bcd3cc" />
+              <rect x="69.96" y="35.82" width="174.9" height="71.64" fill="#bcd3cc" />
+              <rect x="0" y="71.64" width="69.96" height="71.64" fill="#5f94d6" />
+              <rect x="178.08" y="107.46" width="139.92" height="71.64" fill="#6c98cc" />
+              <rect x="159" y="179.1" width="89.04" height="179.1" fill="#5f94d6" />
+              <rect x="0" y="238.8" width="69.96" height="111.44" fill="#bcd3cc" />
+              <rect x="0" y="358.2" width="89.04" height="39.8" fill="#2f2a24" />
+              <rect x="89.04" y="358.2" width="228.96" height="39.8" fill="#bcd3cc" />
+            </g>
+          </svg>
+          <h3 class="title-xl">Machine Learning</h3>
+          <p class="body-l secondary">Build and evaluate small models from scratch.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2 class="title-xl">Start in three steps</h2></div>
+      <div class="steps">
+        <div class="step"><span class="step-n">01</span><h3 class="step-title">Sign in with Google</h3><p class="body-m secondary step-desc">One click, no passwords. New here? We create your account on the spot.</p></div>
+        <div class="step"><span class="step-n">02</span><h3 class="step-title">Pick a chapter</h3><p class="body-m secondary step-desc">Choose a chapter from the curriculum and open any problem.</p></div>
+        <div class="step"><span class="step-n">03</span><h3 class="step-title">Solve, submit, earn XP</h3><p class="body-m secondary step-desc">Run your code on test cases, submit, and earn 10 XP for every accepted solution.</p></div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="cta-band">
+        <div class="cta-copy">
+          <h2 class="display-l">Ready to solve your first problem?</h2>
+          <p class="body-m cta-body">Free to start. Your progress and XP follow you everywhere.</p>
+        </div>
+        <a class="btn btn-white btn-l" href="login.html">Start learning</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-mission">
+        <span class="logo">CodeML</span>
+        <span class="footer-label">Our mission</span>
+        <p class="footer-mission-text">CodeML helps people learn to code and reason about AI through hands-on practice, instant feedback, and steady progress.</p>
+        <div class="footer-col footer-login">
+          <span class="footer-label">Log in</span>
+          <a class="footer-link" href="login.html">Continue with Google</a>
+        </div>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col"><span class="footer-label">Learn</span><a class="footer-link" href="curriculum.html">Curriculum</a><span class="footer-link">Problems</span><span class="footer-link">My page</span></div>
+        <div class="footer-col"><span class="footer-label">Tracks</span><span class="footer-link">Python Basics</span><span class="footer-link">AI Fundamentals</span><span class="footer-link">Algorithms</span><span class="footer-link">Machine Learning</span></div>
+        <div class="footer-col"><span class="footer-label">performance assessment</span><span class="footer-link">Hyunho cho</span><span class="footer-link">chae yeon Lee</span><span class="footer-link">Ye Seon Yu</span><span class="footer-link">Yuha Park</span></div>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom"><span>© 2026 CodeML</span><span>GitHub</span></div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

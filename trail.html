@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trail · CodeML</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;700&family=Source+Serif+4:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/trail.css" />
+</head>
+<body class="trail-page">
+  <!-- 사이드바: 접기/펼치기. 상태는 브라우저에 기억한다 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-top">
+      <a class="logo logo-full" href="index.html">CodeML</a>
+      <span class="logo-mark" aria-hidden="true">CM</span>
+      <button class="sb-toggle" id="sb-toggle" aria-label="Collapse sidebar" aria-expanded="true">
+        <img class="ic-collapse" src="assets/sb-chevron-left.svg" alt="" />
+        <img class="ic-expand" src="assets/sb-chevron-right.svg" alt="" />
+      </button>
+    </div>
+    <nav class="sb-menu">
+      <a class="sb-item" href="home.html" title="Home"><img src="assets/sb-home.svg" alt="" /><span class="sb-label">Home</span></a>
+      <a class="sb-item" href="mypage.html" title="My page"><img src="assets/sb-user.svg" alt="" /><span class="sb-label">My page</span></a>
+      <a class="sb-item active" href="trail.html" title="Trail" aria-current="page"><img src="assets/sb-trail.svg" alt="" /><span class="sb-label">Trail</span></a>
+      <a class="sb-item" href="curriculum.html" title="Curriculum"><img src="assets/sb-book.svg" alt="" /><span class="sb-label">Curriculum</span></a>
+    </nav>
+    <button class="sb-account" data-not-connected>
+      <span class="avatar">A</span><span class="sb-label">Alex</span>
+    </button>
+  </aside>
+
+  <main class="trail-body" id="trail-body">
+    <div class="trail">
+      <button class="banner" id="banner">
+        <span class="banner-eyebrow">Trail 1 · Core path</span>
+        <span class="banner-title">AI Engineer Curriculum<img src="assets/trail-banner-chevron.svg" alt="" /></span>
+      </button>
+
+      <div class="chapter-wrap">
+        <button class="pill" id="chapter-btn" aria-haspopup="listbox" aria-expanded="false">
+          <span id="chapter-label">Ch 1. Python Basics</span><img src="assets/trail-pill-chevron.svg" alt="" />
+        </button>
+        <ul class="chapter-menu" id="chapter-menu" role="listbox" hidden>
+          <li role="option" data-ch="1" aria-selected="true">Ch 1. Python Basics</li>
+          <li role="option" data-ch="2">Ch 2. AI Fundamentals</li>
+          <li role="option" data-ch="3">Ch 3. Algorithms</li>
+          <li role="option" data-ch="4">Ch 4. Machine Learning</li>
+        </ul>
+      </div>
+
+      <div class="path">
+        <div class="path-row">
+          <button class="node done" data-not-connected><span class="hex"><img src="assets/hex-done.svg" alt="" /></span><span class="node-label">Hello, World</span></button>
+        </div>
+        <div class="path-row shift-left">
+          <button class="node done" data-not-connected><span class="hex"><img src="assets/hex-done.svg" alt="" /></span><span class="node-label">Variables &amp; types</span></button>
+        </div>
+        <div class="path-row">
+          <button class="node current" aria-current="step">
+            <span class="hex" id="current-hex">
+              <span class="ring"><img src="assets/hex-ring.svg" alt="" /></span>
+              <span class="hexagon"><img src="assets/hex-current.svg" alt="" /></span>
+              <span class="num">3</span>
+            </span>
+            <span class="node-label">Printing &amp; formatting</span>
+          </button>
+        </div>
+        <div class="path-row shift-right">
+          <button class="node todo" data-not-connected><span class="hex"><span class="hexagon"><img src="assets/hex-todo.svg" alt="" /></span><span class="num">4</span></span><span class="node-label">Input &amp; output</span></button>
+        </div>
+        <div class="path-row">
+          <button class="node todo" data-not-connected><span class="hex"><span class="hexagon"><img src="assets/hex-todo.svg" alt="" /></span><span class="num">5</span></span><span class="node-label">Conditionals</span></button>
+        </div>
+        <div class="path-row shift-left">
+          <button class="node todo" data-not-connected><span class="hex"><span class="hexagon"><img src="assets/hex-todo.svg" alt="" /></span><span class="num">6</span></span><span class="node-label">Loops</span></button>
+        </div>
+        <div class="path-row">
+          <button class="node locked" disabled aria-label="Functions (locked)"><span class="hex"><span class="locked-img"><img src="assets/hex-locked.svg" alt="" /></span></span><span class="node-label">Functions</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-panel" id="side-panel">
+      <div class="stats">
+        <div class="stat-card streak"><img src="assets/trail-zap.svg" alt="" /><div><p class="streak-n">3</p><p class="streak-l">Day streak</p></div></div>
+        <div class="stat-card xp">
+          <div class="xp-row"><span class="xp-title">XP goal</span><span class="xp-count">20 / 50 XP</span></div>
+          <div class="track"><div class="fill" style="width: 40%"></div></div>
+        </div>
+      </div>
+
+      <section class="lesson">
+        <div class="lesson-head">
+          <p class="eyebrow">LESSON 3</p>
+          <h1>Printing &amp; formatting</h1>
+          <span class="tag">Foundation</span>
+        </div>
+        <div class="lesson-table">
+          <div class="lt-head"><span class="lt-step">Step</span><span>Problem</span></div>
+          <div class="lt-row"><span class="lt-step">Basic problems</span><span class="lt-problem"><img src="assets/trail-dot.svg" alt="" />Print a word</span></div>
+          <div class="lt-row"><span class="lt-step"></span><span class="lt-problem"><img src="assets/trail-dot.svg" alt="" />Print a sentence</span></div>
+          <div class="lt-row"><span class="lt-step"></span><span class="lt-problem"><img src="assets/trail-dot.svg" alt="" />Print with quotes</span></div>
+          <div class="lt-row"><span class="lt-step"></span><span class="lt-problem"><img src="assets/trail-dot.svg" alt="" />Print two lines</span></div>
+          <div class="lt-row"><span class="lt-step">Practice problems</span><span class="lt-problem"><img src="assets/trail-dot.svg" alt="" />Print a name</span></div>
+          <div class="lt-row"><span class="lt-step"></span><span class="lt-problem"><img src="assets/trail-dot.svg" alt="" />Print a greeting</span></div>
+          <div class="lt-row"><span class="lt-step">Test problem</span><span class="lt-problem"><img src="assets/trail-dot.svg" alt="" />Print it your way</span></div>
+        </div>
+        <!-- 문제 풀이 페이지는 트레일의 레슨 시작으로만 들어간다 -->
+        <a class="btn btn-primary btn-l start" href="problem.html">Start lesson</a>
+      </section>
+
+      <aside class="tip" id="tip">
+        <div class="tip-title"><span>Trails are easier to read now</span><button id="tip-close" aria-label="Close"><img src="assets/trail-x.svg" alt="" /></button></div>
+        <p>See your progress at a glance, from finished lessons to what’s left in each chapter.</p>
+        <div class="tip-foot">
+          <span class="tip-count">1/4</span>
+          <button class="btn-s btn-s-outline" id="tip-prev">Previous</button>
+          <button class="btn-s btn-s-primary" id="tip-next">Next</button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- 현재 레슨 노드에서 오른쪽 패널로 이어지는 점선 (위치는 JS 가 계산) -->
+    <span class="link" id="link" aria-hidden="true"></span>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/trail.js"></script>
+</body>
+</html>

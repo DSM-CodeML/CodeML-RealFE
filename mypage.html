@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My page · CodeML</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;700&family=Source+Serif+4:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/mypage.css" />
+</head>
+<body class="mypage-page">
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-top">
+      <a class="logo logo-full" href="index.html">CodeML</a>
+      <span class="logo-mark" aria-hidden="true">CM</span>
+      <button class="sb-toggle" id="sb-toggle" aria-label="Collapse sidebar" aria-expanded="true">
+        <img class="ic-collapse" src="assets/sb-chevron-left.svg" alt="" />
+        <img class="ic-expand" src="assets/sb-chevron-right.svg" alt="" />
+      </button>
+    </div>
+    <nav class="sb-menu">
+      <a class="sb-item" href="home.html" title="Home"><img src="assets/sb-home.svg" alt="" /><span class="sb-label">Home</span></a>
+      <a class="sb-item active" href="mypage.html" title="My page" aria-current="page"><img src="assets/sb-user.svg" alt="" /><span class="sb-label">My page</span></a>
+      <a class="sb-item" href="trail.html" title="Trail"><img src="assets/sb-trail.svg" alt="" /><span class="sb-label">Trail</span></a>
+      <a class="sb-item" href="curriculum.html" title="Curriculum"><img src="assets/sb-book.svg" alt="" /><span class="sb-label">Curriculum</span></a>
+    </nav>
+    <button class="sb-account" data-not-connected>
+      <span class="avatar">A</span><span class="sb-label">Alex</span>
+    </button>
+  </aside>
+
+  <main class="mp-body">
+    <nav class="mp-settings" aria-label="Settings">
+      <h2 class="mp-settings-title">Settings</h2>
+      <a class="mp-nav active" href="mypage.html" aria-current="page">Account</a>
+    </nav>
+
+    <div class="mp-main">
+      <header class="mp-head">
+        <h1 class="title-xl">Account</h1>
+        <p class="body-m secondary">Manage your Code ML profile and track your learning progress.</p>
+      </header>
+
+      <form class="mp-form" id="account-form" novalidate>
+        <div class="field">
+          <label class="field-label" for="email">Email</label>
+          <div class="input-wrap">
+            <input class="input" id="email" type="email" value="alex@gmail.com" readonly />
+            <img src="assets/icon-lock.svg" alt="" />
+          </div>
+          <p class="help">Linked to your Google account. Can't be changed.</p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="username">Username <span class="req" aria-hidden="true">*</span></label>
+          <input class="input" id="username" type="text" value="alex_ml" required autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <span class="field-label">Level</span>
+          <div class="level-card">
+            <span class="level-n" id="level-n">Level 3</span>
+            <div class="xp-row"><span class="xp-title">Next level</span><span class="xp-count" id="xp-count">20 / 50 XP</span></div>
+            <div class="track"><div class="fill" id="xp-fill" style="width:40%"></div></div>
+            <p class="help">Earn 10 XP for every problem you solve.</p>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-m" id="save" type="submit" disabled>Save changes</button>
+      </form>
+
+      <hr class="mp-divider" />
+
+      <section class="mp-section">
+        <h2 class="mp-h2">Activity</h2>
+        <div class="card heat">
+          <div class="heat-head"><span class="label-s">Problems solved per day</span><span class="xp-count">Last 38 weeks</span></div>
+          <div class="heat-grid" id="heat-grid" role="img" aria-label="Problems solved per day over the last 38 weeks"></div>
+          <div class="heat-legend"><span class="help">Less</span><span class="cell l0"></span><span class="cell l1"></span><span class="cell l2"></span><span class="cell l3"></span><span class="cell l4"></span><span class="help">More</span></div>
+        </div>
+      </section>
+
+      <section class="mp-section">
+        <h2 class="mp-h2">Submissions</h2>
+        <div class="card sub">
+          <div class="sub-row sub-headrow"><span>#</span><span>Problem</span><span>Result</span><span>Language</span><span class="r">Submitted</span></div>
+          <div id="sub-body"></div>
+        </div>
+      </section>
+
+      <section class="mp-section">
+        <h2 class="mp-h2">Security</h2>
+        <div class="card action">
+          <div><p class="action-title">Password</p><p class="action-desc">Update the password you use to sign in.</p></div>
+          <button class="btn btn-outline btn-m" type="button" id="change-password">Change password</button>
+        </div>
+      </section>
+
+      <section class="mp-section">
+        <h2 class="mp-h2">Danger zone</h2>
+        <div class="card action danger">
+          <div><p class="action-title">Delete account</p><p class="action-desc">Permanently delete your account, progress, and submissions. This can't be undone.</p></div>
+          <button class="btn btn-outline btn-m" type="button" id="delete-account">Delete account</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/mypage.js"></script>
+</body>
+</html>

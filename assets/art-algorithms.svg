@@ -1,0 +1,69 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="318" height="398" viewBox="0 0 318 398" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="art">
+<g clip-path="url(#clip0_0_901)">
+<rect id="Rectangle" width="318" height="398" fill="#191514"/>
+<rect id="Rectangle_2" width="84.27" height="398" fill="#46A758"/>
+<g id="Ellipse" filter="url(#filter0_f_0_901)">
+<circle cx="270.3" cy="47.76" r="69.96" fill="#8A8A88" fill-opacity="0.5"/>
+</g>
+<mask id="stroke0_0_901" fill="white">
+<path d="M305.28 222.88C305.28 287.37 254.026 339.65 190.8 339.65C127.574 339.65 76.32 287.37 76.32 222.88C76.32 158.39 127.574 106.11 190.8 106.11C254.026 106.11 305.28 158.39 305.28 222.88Z"/>
+</mask>
+<ellipse id="Ellipse_2" cx="190.8" cy="222.88" rx="114.48" ry="116.77" stroke-width="2.8" stroke="white" stroke-opacity="0.55" mask="url(#stroke0_0_901)"/>
+<mask id="stroke1_0_901" fill="white">
+<path d="M297.012 224.472C297.012 283.23 250.314 330.862 192.708 330.862C135.102 330.862 88.404 283.23 88.404 224.472C88.404 165.714 135.102 118.082 192.708 118.082C250.314 118.082 297.012 165.714 297.012 224.472Z"/>
+</mask>
+<ellipse id="Ellipse_3" cx="192.708" cy="224.472" rx="104.304" ry="106.39" stroke-width="2.8" stroke="white" stroke-opacity="0.53" mask="url(#stroke1_0_901)"/>
+<mask id="stroke2_0_901" fill="white">
+<path d="M288.744 226.064C288.744 279.089 246.601 322.075 194.616 322.075C142.631 322.075 100.488 279.089 100.488 226.064C100.488 173.039 142.631 130.053 194.616 130.053C246.601 130.053 288.744 173.039 288.744 226.064Z"/>
+</mask>
+<ellipse id="Ellipse_4" cx="194.616" cy="226.064" rx="94.128" ry="96.0106" stroke-width="2.8" stroke="white" stroke-opacity="0.51" mask="url(#stroke2_0_901)"/>
+<mask id="stroke3_0_901" fill="white">
+<path d="M280.476 227.656C280.476 274.949 242.889 313.287 196.524 313.287C150.159 313.287 112.572 274.949 112.572 227.656C112.572 180.363 150.159 142.025 196.524 142.025C242.889 142.025 280.476 180.363 280.476 227.656Z"/>
+</mask>
+<ellipse id="Ellipse_5" cx="196.524" cy="227.656" rx="83.952" ry="85.631" stroke-width="2.8" stroke="white" stroke-opacity="0.49" mask="url(#stroke3_0_901)"/>
+<mask id="stroke4_0_901" fill="white">
+<path d="M272.208 229.248C272.208 270.808 239.177 304.5 198.432 304.5C157.687 304.5 124.656 270.808 124.656 229.248C124.656 187.688 157.687 153.996 198.432 153.996C239.177 153.996 272.208 187.688 272.208 229.248Z"/>
+</mask>
+<ellipse id="Ellipse_6" cx="198.432" cy="229.248" rx="73.776" ry="75.2515" stroke-width="2.8" stroke="white" stroke-opacity="0.47" mask="url(#stroke4_0_901)"/>
+<mask id="stroke5_0_901" fill="white">
+<path d="M263.94 230.84C263.94 266.668 235.465 295.712 200.34 295.712C165.215 295.712 136.74 266.668 136.74 230.84C136.74 195.012 165.215 165.968 200.34 165.968C235.465 165.968 263.94 195.012 263.94 230.84Z"/>
+</mask>
+<ellipse id="Ellipse_7" cx="200.34" cy="230.84" rx="63.6" ry="64.872" stroke-width="2.8" stroke="white" stroke-opacity="0.45" mask="url(#stroke5_0_901)"/>
+<mask id="stroke6_0_901" fill="white">
+<path d="M255.672 232.432C255.672 262.527 231.753 286.924 202.248 286.924C172.743 286.924 148.824 262.527 148.824 232.432C148.824 202.337 172.743 177.94 202.248 177.94C231.753 177.94 255.672 202.337 255.672 232.432Z"/>
+</mask>
+<ellipse id="Ellipse_8" cx="202.248" cy="232.432" rx="53.424" ry="54.4925" stroke-width="2.8" stroke="white" stroke-opacity="0.43" mask="url(#stroke6_0_901)"/>
+<mask id="stroke7_0_901" fill="white">
+<path d="M247.404 234.024C247.404 258.387 228.041 278.137 204.156 278.137C180.271 278.137 160.908 258.387 160.908 234.024C160.908 209.661 180.271 189.911 204.156 189.911C228.041 189.911 247.404 209.661 247.404 234.024Z"/>
+</mask>
+<ellipse id="Ellipse_9" cx="204.156" cy="234.024" rx="43.248" ry="44.113" stroke-width="2.8" stroke="white" stroke-opacity="0.41" mask="url(#stroke7_0_901)"/>
+<mask id="stroke8_0_901" fill="white">
+<path d="M239.136 235.616C239.136 254.246 224.329 269.349 206.064 269.349C187.799 269.349 172.992 254.246 172.992 235.616C172.992 216.986 187.799 201.883 206.064 201.883C224.329 201.883 239.136 216.986 239.136 235.616Z"/>
+</mask>
+<ellipse id="Ellipse_10" cx="206.064" cy="235.616" rx="33.072" ry="33.7334" stroke-width="2.8" stroke="white" stroke-opacity="0.39" mask="url(#stroke8_0_901)"/>
+<mask id="stroke9_0_901" fill="white">
+<path d="M230.868 237.208C230.868 250.106 220.617 260.562 207.972 260.562C195.327 260.562 185.076 250.106 185.076 237.208C185.076 224.31 195.327 213.854 207.972 213.854C220.617 213.854 230.868 224.31 230.868 237.208Z"/>
+</mask>
+<ellipse id="Ellipse_11" cx="207.972" cy="237.208" rx="22.896" ry="23.3539" stroke-width="2.8" stroke="white" stroke-opacity="0.37" mask="url(#stroke9_0_901)"/>
+<g id="Ellipse_12" filter="url(#filter1_f_0_901)">
+<circle cx="203.52" cy="230.84" r="31.8" fill="white" fill-opacity="0.95"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_0_901" x="170.34" y="-52.2" width="199.92" height="199.92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_0_901"/>
+</filter>
+<filter id="filter1_f_0_901" x="147.72" y="175.04" width="111.6" height="111.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="12" result="effect1_foregroundBlur_0_901"/>
+</filter>
+<clipPath id="clip0_0_901">
+<rect width="318" height="398" rx="12" fill="white"/>
+</clipPath>
+</defs>
+</svg>
