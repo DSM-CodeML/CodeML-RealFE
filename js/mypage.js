@@ -15,78 +15,101 @@ function setCollapsed(collapsed) {
 $('sb-toggle').addEventListener('click', () => setCollapsed(!sidebar.classList.contains('collapsed')))
 setCollapsed(store.get('cm-sidebar') === 'collapsed')
 
-/* ---------- 레벨: 더미 총 XP 에서 계산 (레벨당 50XP) ---------- */
+/* ---------- 레벨: 총 XP 에서 계산 (레벨당 50XP) ---------- */
 const XP_PER_LEVEL = 50
-const totalXp = 120
-$('level-n').textContent = 'Level ' + (Math.floor(totalXp / XP_PER_LEVEL) + 1)
-$('xp-count').textContent = (totalXp % XP_PER_LEVEL) + ' / ' + XP_PER_LEVEL + ' XP'
-$('xp-fill').style.width = ((totalXp % XP_PER_LEVEL) / XP_PER_LEVEL) * 100 + '%'
+function showXp(totalXp) {
+  $('level-n').textContent = 'Level ' + (Math.floor(totalXp / XP_PER_LEVEL) + 1)
+  $('xp-count').textContent = (totalXp % XP_PER_LEVEL) + ' / ' + XP_PER_LEVEL + ' XP'
+  $('xp-fill').style.width = ((totalXp % XP_PER_LEVEL) / XP_PER_LEVEL) * 100 + '%'
+}
 
-/* ---------- 아이디 수정: 저장은 로컬 상태만 바꾼다 (서버 저장은 백엔드 담당) ---------- */
+/* ---------- 계정: 이메일/아이디/XP 는 서버 값, 아이디는 PATCH 로 저장 ---------- */
 const username = $('username')
 const saveBtn = $('save')
-let saved = username.value
+const help = $('username-help')
+let saved = ''
+ME.then((user) => {
+  if (!user) return // 비로그인은 common.js 가 로그인 페이지로 보낸다
+  $('email').value = user.email
+  username.value = saved = user.nickname
+  showXp(user.xp)
+})
 username.addEventListener('input', () => {
   const v = username.value.trim()
   saveBtn.disabled = v === '' || v === saved
   saveBtn.classList.remove('saved')
   saveBtn.textContent = 'Save changes'
+  help.hidden = true
 })
-$('account-form').addEventListener('submit', (e) => {
+$('account-form').addEventListener('submit', async (e) => {
   e.preventDefault()
   if (saveBtn.disabled) return
-  saved = username.value.trim()
   saveBtn.disabled = true
-  saveBtn.classList.add('saved')
-  saveBtn.textContent = 'Saved'
-  setTimeout(() => {
-    saveBtn.classList.remove('saved')
-    saveBtn.textContent = 'Save changes'
-  }, 2000)
+  try {
+    const res = await authFetch('/api/auth/me', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nickname: username.value.trim() }),
+    })
+    const body = await res.json().catch(() => ({}))
+    if (!res.ok) throw new Error(res.status === 400 ? body.message : 'Could not save. Try again.')
+    saved = username.value = body.user.nickname
+    document.querySelector('.sb-account .sb-label').textContent = saved
+    document.querySelector('.sb-account .avatar').textContent = saved[0].toUpperCase()
+    saveBtn.classList.add('saved')
+    saveBtn.textContent = 'Saved'
+    setTimeout(() => {
+      saveBtn.classList.remove('saved')
+      saveBtn.textContent = 'Save changes'
+    }, 2000)
+  } catch (err) {
+    help.textContent = err.message
+    help.hidden = false
+    saveBtn.disabled = false
+  }
 })
 
-/* ---------- Activity 잔디: levels[주][요일] (0~4) ---------- */
+/* ---------- Activity 잔디: GET /api/grass/me (최근 365일, level 0~4 는 서버 계산) ---------- */
 const WEEKS = 38
-const LEVEL_STEPS = [1, 3, 5, 7] // 하루 푼 문제 수 → 1~4단계 하한 (기준 미정, 여기만 고치면 된다)
-const levelOf = (n) => LEVEL_STEPS.filter((s) => n >= s).length
-let seed = 7 // 시안용 더미 데이터: 시드 고정이라 새로고침해도 같은 모양
-const rand = () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648
-const levels = Array.from({ length: WEEKS }, () =>
-  Array.from({ length: 7 }, () => levelOf(rand() < 0.45 ? 0 : Math.floor(rand() * 9))))
 const grid = $('heat-grid')
-levels.forEach((week) => week.forEach((lv) => {
-  const c = document.createElement('span')
-  c.className = 'cell l' + lv
-  grid.appendChild(c)
-}))
-
-/* ---------- Submissions: 더미 데이터 ---------- */
-const DOT = { Accepted: 'success', 'Wrong Answer': 'wrong', 'Compile Error': 'compile' }
-const submissions = [
-  [1048, 'Print a word', 'Accepted', 'Python 3', 'Nov 21, 14:32'],
-  [1047, 'Print a sentence', 'Accepted', 'Python 3', 'Nov 21, 14:10'],
-  [1042, 'Print with quotes', 'Wrong Answer', 'Python 3', 'Nov 20, 21:05'],
-  [1039, 'Input & output', 'Compile Error', 'Python 3', 'Nov 20, 20:48'],
-  [1031, 'Hello, World', 'Accepted', 'Python 3', 'Nov 19, 09:12'],
-]
-const subBody = $('sub-body')
-submissions.forEach(([id, problem, result, lang, at]) => {
-  const row = document.createElement('div')
-  row.className = 'sub-row'
-  const cells = [id, problem, null, lang, at].map((t, i) => {
-    const s = document.createElement('span')
-    if (i === 2) {
-      s.className = 'res'
-      const img = document.createElement('img')
-      img.src = 'assets/dot-' + DOT[result] + '.svg'
-      img.alt = ''
-      s.append(img, result)
-    } else s.textContent = t
-    if (i === 4) s.className = 'r'
-    return s
+ME.then((user) => {
+  if (!user) return
+  authFetch('/api/grass/me').then((r) => (r.ok ? r.json() : null), () => null).then((g) => {
+    if (!g) return
+    // 세로 7칸(일~토)씩 열로 채우므로 첫 날의 요일만큼 앞을 비우고, 최근 WEEKS 주만 남긴다
+    const first = new Date(g.days[0].date + 'T00:00:00Z').getUTCDay()
+    const lv = [...Array(first).fill(0), ...g.days.map((d) => d.level)].slice(-WEEKS * 7)
+    grid.replaceChildren(...lv.map((n) => { const c = document.createElement('span'); c.className = 'cell l' + n; return c }))
   })
-  row.append(...cells)
-  subBody.appendChild(row)
+})
+
+/* ---------- Submissions: GET /api/submissions/me (내 최근 제출 10건) ---------- */
+const DOT = { Accepted: 'success', 'Wrong Answer': 'wrong', 'Compile Error': 'compile' }
+const subBody = $('sub-body')
+ME.then((user) => {
+  if (!user) return
+  authFetch('/api/submissions/me').then((r) => (r.ok ? r.json() : null), () => null).then((data) => {
+    if (!data) return
+    data.items.forEach((s) => {
+      const row = document.createElement('div')
+      row.className = 'sub-row'
+      const at = new Date(s.createdAt).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false })
+      const cells = [s.id, s.problemTitle, null, s.language, at].map((t, i) => {
+        const c = document.createElement('span')
+        if (i === 2) {
+          c.className = 'res'
+          const img = document.createElement('img')
+          img.src = 'assets/dot-' + DOT[s.result] + '.svg'
+          img.alt = ''
+          c.append(img, s.result)
+        } else c.textContent = t
+        if (i === 4) c.className = 'r'
+        return c
+      })
+      row.append(...cells)
+      subBody.appendChild(row)
+    })
+  })
 })
 
 /* Change password / Delete account 는 TODO: 확인 모달 시안과 동작이 아직 정해지지 않았다 */

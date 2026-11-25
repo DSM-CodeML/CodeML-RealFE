@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/dashboard.css" />
   <link rel="stylesheet" href="css/curriculum.css" />
 </head>
-<body class="app-page">
+<body data-auth="required" class="app-page">
   <aside class="sidebar" id="sidebar">
     <div class="sb-top">
       <a class="logo logo-full" href="index.html">CodeML</a>
@@ -27,7 +27,7 @@
       <a class="sb-item" href="trail.html" title="Trail"><img src="assets/sb-trail.svg" alt="" /><span class="sb-label">Trail</span></a>
       <a class="sb-item active" href="curriculum.html" title="Curriculum" aria-current="page"><img src="assets/sb-book.svg" alt="" /><span class="sb-label">Curriculum</span></a>
     </nav>
-    <button class="sb-account" data-not-connected>
+    <button class="sb-account" data-logout title="Log out">
       <span class="avatar">A</span><span class="sb-label">Alex</span>
     </button>
   </aside>

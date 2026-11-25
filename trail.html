@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/trail.css" />
 </head>
-<body class="trail-page">
+<body data-auth="required" class="trail-page">
   <!-- 사이드바: 접기/펼치기. 상태는 브라우저에 기억한다 -->
   <aside class="sidebar" id="sidebar">
     <div class="sb-top">
@@ -27,7 +27,7 @@
       <a class="sb-item active" href="trail.html" title="Trail" aria-current="page"><img src="assets/sb-trail.svg" alt="" /><span class="sb-label">Trail</span></a>
       <a class="sb-item" href="curriculum.html" title="Curriculum"><img src="assets/sb-book.svg" alt="" /><span class="sb-label">Curriculum</span></a>
     </nav>
-    <button class="sb-account" data-not-connected>
+    <button class="sb-account" data-logout title="Log out">
       <span class="avatar">A</span><span class="sb-label">Alex</span>
     </button>
   </aside>
@@ -109,7 +109,7 @@
           <div class="lt-row"><span class="lt-step">Test problem</span><span class="lt-problem"><img src="assets/trail-dot.svg" alt="" />Print it your way</span></div>
         </div>
         <!-- 문제 풀이 페이지는 트레일의 레슨 시작으로만 들어간다 -->
-        <a class="btn btn-primary btn-l start" href="problem.html">Start lesson</a>
+        <a class="btn btn-primary btn-l start" href="problem.html?id=1">Start lesson</a>
       </section>
 
       <aside class="tip" id="tip">

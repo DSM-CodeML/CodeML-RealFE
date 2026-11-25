@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/mypage.css" />
 </head>
-<body class="mypage-page">
+<body data-auth="required" class="mypage-page">
   <aside class="sidebar" id="sidebar">
     <div class="sb-top">
       <a class="logo logo-full" href="index.html">CodeML</a>
@@ -26,7 +26,7 @@
       <a class="sb-item" href="trail.html" title="Trail"><img src="assets/sb-trail.svg" alt="" /><span class="sb-label">Trail</span></a>
       <a class="sb-item" href="curriculum.html" title="Curriculum"><img src="assets/sb-book.svg" alt="" /><span class="sb-label">Curriculum</span></a>
     </nav>
-    <button class="sb-account" data-not-connected>
+    <button class="sb-account" data-logout title="Log out">
       <span class="avatar">A</span><span class="sb-label">Alex</span>
     </button>
   </aside>
@@ -55,7 +55,8 @@
 
         <div class="field">
           <label class="field-label" for="username">Username <span class="req" aria-hidden="true">*</span></label>
-          <input class="input" id="username" type="text" value="alex_ml" required autocomplete="off" />
+          <input class="input" id="username" type="text" value="" required autocomplete="off" maxlength="30" />
+          <p class="help" id="username-help" hidden></p>
         </div>
 
         <div class="field">
