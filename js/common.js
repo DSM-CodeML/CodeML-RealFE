@@ -14,8 +14,20 @@ function showNotConnected() {
   scrim.querySelector("button").focus();
 }
 
+// 구글 OAuth 클라이언트에는 http://127.0.0.1:8000 만 "승인된 자바스크립트 원본"으로 등록돼 있다.
+// localhost:8000 으로 열면 구글 로그인 팝업이 "액세스 차단됨: 400 오류 origin_mismatch" 로 막히므로 127.0.0.1 로 옮긴다.
+// (Google Cloud Console 에 http://localhost:8000 을 추가하면 이 블록은 지워도 된다)
+const REDIRECTING = location.hostname === "localhost";
+if (REDIRECTING) {
+  const url = new URL(location.href);
+  url.hostname = "127.0.0.1";
+  location.replace(url);
+}
+
 // 백엔드 주소. 배포 시 이 값만 바꾼다.
-const API_BASE = "http://localhost:3000";
+// 페이지(127.0.0.1)와 같은 호스트여야 한다. 127.0.0.1 과 localhost 는 서로 다른 사이트라서
+// 섞어 쓰면 SameSite=Lax 인 refresh_token 쿠키가 저장/전송되지 않아 로그인이 유지되지 않는다.
+const API_BASE = "http://127.0.0.1:3000";
 
 // 구글 웹 클라이언트 ID (백엔드 GOOGLE_CLIENT_ID 와 같은 값. 공개값이라 코드에 둬도 된다)
 const GOOGLE_CLIENT_ID = "8934764773-7m9svqcviocodvtoo8rksjgoopgtbemq.apps.googleusercontent.com";
@@ -31,10 +43,11 @@ const authFetch = (path, opts = {}) =>
   });
 
 // 로그인한 사용자 { id, nickname, email } (없으면 null). 페이지 스크립트는 ME.then(user => ...) 로 쓴다.
-const ME = fetch(API_BASE + "/api/auth/refresh", {
+// 127.0.0.1 로 이동 중이면 refresh 를 부르지 않는다(회전식이라 버려질 페이지에서 쓰면 안 됨).
+const ME = (REDIRECTING ? new Promise(() => {}) : fetch(API_BASE + "/api/auth/refresh", {
   method: "POST",
   credentials: "include",
-})
+}))
   .then(
     (r) => (r.ok ? r.json() : null),
     () => null,
